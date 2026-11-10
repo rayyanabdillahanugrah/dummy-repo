@@ -924,7 +924,7 @@ const SF_PHOTOS = [
 
     let raf = 0;
     const schedule = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; relayout(); }); };
-    if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(layer);   // tinggi/lebar halaman berubah
+    if ("ResizeObserver" in window) new ResizeObserver(schedule).observe(layer);
     else window.addEventListener("resize", schedule);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
   }
@@ -933,12 +933,6 @@ const SF_PHOTOS = [
   else window.addEventListener("load", init, { once: true });
 })();
 
-/* ==========================================================
-   VINYL PLAYER & ALBUM SHELF  (section #songs)
-   Tambah album = tambah satu objek di VINYL_ALBUMS.
-   Multi-track (opsional): ganti `audio` dengan
-     tracks: [{ title: "...", audio: "..." }, ...]
-   ========================================================== */
 const VINYL_ALBUMS = [
   {
     id: 1,
@@ -960,7 +954,27 @@ const VINYL_ALBUMS = [
     artist: "The Beatles",
     cover: "heyjudealbum.jpeg",
     audio: "The Beatles - Hey Jude (2015 Mix).mp3"
-  }
+  },
+  {
+    id: 4,
+    title: "Stargazing",
+    artist: "Farrel Hilal",
+    cover: "stargazing.jpg",
+    audio: "Stargazing.mp3"
+  },
+  {
+    id: 5,
+    title: "Selaras",
+    artist: "Kunto Aji, Nadin Amizah",
+    cover: "selaras.jpg",
+    audio: "Selaras - Kunto Aji & Nadin Amizah [Lirik].mp3"
+  },
+  {
+    id: 6,
+    title "Dewi",
+    artist: "Alexa",
+    cover: "dewi.jpg",
+    audio: "Alexa_-_Dewi_(mp3.pm).mp3"
 ];
 
 (function () {
@@ -975,7 +989,7 @@ const VINYL_ALBUMS = [
         noteEl = $("vp-note"), curEl = $("vp-cur"), durEl = $("vp-dur"), seek = $("vp-seek"),
         playBtn = $("vp-play"), prevBtn = $("vp-prev"), nextBtn = $("vp-next"), knob = $("vp-knob");
 
-  /* ---------- Playlist (diratakan dari album/track) ---------- */
+  
   const playlist = [];
   VINYL_ALBUMS.forEach(function (a, ai) {
     const tracks = Array.isArray(a.tracks) && a.tracks.length ? a.tracks : [{ title: a.title, audio: a.audio }];
@@ -994,9 +1008,8 @@ const VINYL_ALBUMS = [
   }
   function setNote(msg) { noteEl.hidden = !msg; noteEl.textContent = msg || ""; }
 
-  VINYL_ALBUMS.forEach(function (a) { const p = new Image(); p.src = a.cover; });   // preload: label tidak berkedip
-
-  /* ---------- Rak album ---------- */
+  VINYL_ALBUMS.forEach(function (a) { const p = new Image(); p.src = a.cover; });
+  
   const albumBtns = [];
   (function buildShelf() {
     const cells = Math.max(6, Math.ceil(VINYL_ALBUMS.length / 2) * 2);
@@ -1022,7 +1035,7 @@ const VINYL_ALBUMS = [
     }
   })();
 
-  /* ---------- Tampilan ---------- */
+
   function stopUI() {
     deck.classList.remove("is-arm-down", "is-spinning");
     playBtn.classList.remove("is-playing");
@@ -1049,7 +1062,7 @@ const VINYL_ALBUMS = [
   }
   labelImg.addEventListener("error", function () { labelImg.style.visibility = "hidden"; });
 
-  /* ---------- Kontrol audio ---------- */
+
   function showError() {
     switching = false;
     stopUI();
@@ -1068,14 +1081,14 @@ const VINYL_ALBUMS = [
     cur = (i + playlist.length) % playlist.length;
     setNote("");
     showTrack();
-    switching = !!autoplay && (switching || !audio.paused);   // ganti lagu saat sedang main: lengan & piringan tidak dimatikan
+    switching = !!autoplay && (switching || !audio.paused);
     audio.src = playlist[cur].audio;
     audio.load();
     if (autoplay) play(); else { switching = false; wantPlay = false; }
   }
   function toggle() { if (audio.paused) play(); else audio.pause(); }
 
-  // Lagu hanya berbunyi jika tombol play sudah aktif; selain itu album hanya dimuat.
+
   function isPlaying() { return switching || (!audio.paused && !audio.ended); }
 
   function onAlbumClick(ai) {
@@ -1089,16 +1102,16 @@ const VINYL_ALBUMS = [
     loadTrack(cur - 1, isPlaying());
   });
 
-  /* ---------- Sinkronisasi dengan event audio asli ---------- */
+ 
   audio.addEventListener("play", function () {
-    deck.classList.add("is-arm-down");                 // lengan turun
+    deck.classList.add("is-arm-down");               
     playBtn.classList.add("is-playing");
     playBtn.setAttribute("aria-label", "Jeda");
   });
   audio.addEventListener("playing", function () {
     setNote("");
     switching = false;
-    deck.classList.add("is-spinning");                 // piringan berputar
+    deck.classList.add("is-spinning");             
   });
   function stopUnlessSwitching() {
     if (switching || (audio.ended && cur < playlist.length - 1)) return;
@@ -1133,7 +1146,7 @@ const VINYL_ALBUMS = [
   });
   seek.addEventListener("change", function () { seeking = false; });
 
-  /* ---------- Knob volume (Pointer Events) ---------- */
+
   const K_MIN = -135, K_MAX = 135;
   let rot = K_MIN + vol * (K_MAX - K_MIN);
   let kDrag = null;
@@ -1174,7 +1187,7 @@ const VINYL_ALBUMS = [
     else if (e.key === "Home") n = K_MIN;
     else if (e.key === "End") n = K_MAX;
     else return;
-    e.preventDefault(); e.stopPropagation();   // jangan ikut menggeser galeri Frames
+    e.preventDefault(); e.stopPropagation();   
     rot = Math.max(K_MIN, Math.min(K_MAX, n));
     applyVolume();
   });
