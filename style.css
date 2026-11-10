@@ -1475,10 +1475,7 @@ body.star-dragging * { cursor: grabbing !important; }
   .star svg { transition: none; }
 }
 
-/* ==========================================================
-   VINYL PLAYER & ALBUM SHELF  (section #songs)
-   Ukuran turntable memakai cqw (relatif lebar .vp-deck)
-   ========================================================== */
+
 .vp-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -1489,7 +1486,7 @@ body.star-dragging * { cursor: grabbing !important; }
 .vp-left { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
 .vp-right { min-width: 0; }
 
-/* ---------- Turntable ---------- */
+
 .vp-deck {
   position: relative;
   container-type: inline-size;
@@ -1501,7 +1498,7 @@ body.star-dragging * { cursor: grabbing !important; }
   overflow: hidden;
   -webkit-user-select: none; user-select: none;
 }
-.vp-deck::before {               /* tekstur brushed halus */
+.vp-deck::before {          
   content: ""; position: absolute; inset: 0; pointer-events: none;
   background: repeating-linear-gradient(90deg, rgba(255,255,255,.014) 0 1px, transparent 1px 3px);
 }
@@ -1518,7 +1515,7 @@ body.star-dragging * { cursor: grabbing !important; }
 
 .vp-platter {
   position: absolute; left: 3cqw; top: 11cqw; width: 68cqw; aspect-ratio: 1; border-radius: 50%;
-  background: repeating-conic-gradient(#3d3d41 0 .7deg, #18181a .7deg 3.6deg);   /* strobe dots */
+  background: repeating-conic-gradient(#3d3d41 0 .7deg, #18181a .7deg 3.6deg);   
   box-shadow: 0 0 0 1.1cqw #0a0a0b, 0 1.6cqw 3.4cqw rgba(0,0,0,.75), inset 0 0 0 .3cqw #4a4a4f;
 }
 .vp-record {
@@ -1577,7 +1574,6 @@ body.star-dragging * { cursor: grabbing !important; }
   box-shadow: 0 .3cqw .6cqw rgba(0,0,0,.5);
 }
 
-/* Tonearm: titik putar tepat di pusat .vp-pivot (87cqw, 14cqw) */
 .vp-arm {
   position: absolute; left: 87cqw; top: 14cqw; width: 0; height: 0; z-index: 3;
   transform-origin: 0 0; transform: rotate(6deg);
@@ -1605,13 +1601,12 @@ body.star-dragging * { cursor: grabbing !important; }
   background: linear-gradient(#cfcfd3, #77777c);
 }
 
-/* Volume knob */
 .vp-knob-well {
   position: absolute; left: 83cqw; top: 73.5cqw; width: 13cqw; aspect-ratio: 1; border-radius: 50%;
   cursor: grab; touch-action: none; outline: none;
 }
 .vp-knob-well:active { cursor: grabbing; }
-.vp-knob-well::before {            /* tick marks 270° */
+.vp-knob-well::before {          
   content: ""; position: absolute; inset: 0; border-radius: 50%;
   background: repeating-conic-gradient(from 225deg, rgba(255,255,255,.3) 0 1.2deg, transparent 1.2deg 27deg);
   -webkit-mask: conic-gradient(from 225deg, #000 0 271deg, transparent 0);
@@ -1634,7 +1629,6 @@ body.star-dragging * { cursor: grabbing !important; }
   border-radius: .3cqw; background: #ecebe6;
 }
 
-/* ---------- Card player ---------- */
 .vp-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -1678,7 +1672,7 @@ body.star-dragging * { cursor: grabbing !important; }
 .vp-btn.is-playing .i-play { display: none; }
 
 .vp-note {
-  position: absolute; left: 0; right: 0; top: calc(100% + 10px); z-index: 5;  /* melayang: tidak menggeser layout */
+  position: absolute; left: 0; right: 0; top: calc(100% + 10px); z-index: 5; 
   font-size: 12.5px; color: #9a4a3a; background: #faf1ee; border: 1px solid #efd5cd;
   border-radius: var(--radius-sm); padding: 8px 12px;
 }
@@ -1703,7 +1697,6 @@ body.star-dragging * { cursor: grabbing !important; }
 #vp-seek::-moz-range-thumb { width: 10px; height: 10px; border-radius: 50%; background: var(--text); border: 2px solid var(--white); }
 #vp-seek:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; border-radius: 4px; }
 
-/* ---------- Album shelf (kabinet abu-abu) ---------- */
 .vs-cabinet {
   position: relative;
   display: grid;
@@ -1718,7 +1711,7 @@ body.star-dragging * { cursor: grabbing !important; }
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.6), inset 0 -3px 0 rgba(0,0,0,.18);
   margin-bottom: 14px;
 }
-.vs-cabinet::before, .vs-cabinet::after {   /* kaki kabinet */
+.vs-cabinet::before, .vs-cabinet::after {  
   content: ""; position: absolute; bottom: -14px; width: 28px; height: 14px;
   background: linear-gradient(#6d7073, #4c4f52); border-radius: 0 0 5px 5px;
   box-shadow: 0 6px 10px rgba(0,0,0,.25);
@@ -1760,7 +1753,6 @@ body.star-dragging * { cursor: grabbing !important; }
     0 0 22px rgba(255,255,255,.55), 0 14px 22px rgba(0,0,0,.4);
 }
 
-/* ---------- Responsif ---------- */
 @media (max-width: 900px) {
   .vp-layout { grid-template-columns: minmax(0, 1fr); max-width: 560px; margin-left: auto; margin-right: auto; gap: 40px; }
 }
