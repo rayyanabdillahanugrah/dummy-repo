@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReyStudio</title>
+  <script>
+  document.documentElement.setAttribute("data-theme", "light");
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <span class="loader-text">Loading<span class="dots">...</span></span>
+    </div>
+  </div>
+
+  <div id="scroll-progress"></div>
+
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">ReyStudio<span class="dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#songs">Music</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#frames">Frames</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#about" class="mobile-link">About</a>
+      <a href="#songs" class="mobile-link">Music</a>
+      <a href="#works" class="mobile-link">Works</a>
+      <a href="#frames" class="mobile-link">Frames</a>
+      <a href="#portfolio" class="mobile-link">Portfolio</a>
+      <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <section id="hero">
+    <div class="hero-bg-shape shape-1"></div>
+    <div class="hero-bg-shape shape-2"></div>
+    <div class="hero-bg-shape shape-3"></div>
+    <div class="hero-card reveal-hero">
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring"></div>
+        <img
+          class="hero-photo"
+          src="fotoprofil.jpg"
+          alt="Foto Profil"
+          onerror="this.src='https://ui-avatars.com/api/?name=Nama+Saya&size=200&background=e8e8e8&color=333&bold=true&font-size=0.35'"
+        />
+        <div class="hero-photo-badge">✦</div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-greeting">Hello! Saya</p>
+        <h1 class="hero-name">Rayyan Abdillah Anugrah<span class="hero-dot">.</span></h1>
+        <p class="hero-desc">
+          An ordinary person who just wants to look cool
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Photographer</span>
+          <span class="tag">Writer</span>
+          <span class="tag">Weirdo?</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-primary">Explore</a>
+          <a href="#contact" class="btn btn-ghost">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label reveal">About</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">About Me<br/><em>Tentang Saya</em></h2>
+          <p class="about-para text-justify">
+            Saya lahir di Jakarta, 24 April 2009. Saya senang menciptakan karya yang beragam, dari foto yang bercerita hingga
+            tulisan-tulisan aneh tapi keren. Setiap proyek
+             yang saya lakukan adalah kesempatan untuk belajar dan berkembang.
+          </p>
+          <p class="about-para text-justify">
+             <em>
+             "Jika segalanya diberikan dan tidak lagi diperjuangkan,
+             apakah manusia tetaplah manusia,
+             atau menjadi konsumen abadi dari anugerah ilahi?"
+             </em>
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">SD</span>
+              <span class="stat-label">SDN Batu Ampar<br/>11 Pagi</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">SMP</span>
+              <span class="stat-label">SMPIT Para Juara<br/>Bekasi</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">SMA</span>
+              <span class="stat-label">SMAN 39 JAKARTA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-hobbies reveal">
+          <h3 class="hobbies-title">Hobi & Minat</h3>
+          <div class="hobby-grid">
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Fotografi</span>
+              <span class="hobby-desc">Every second matters</span>
+            </div>
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Menulis</span>
+              <span class="hobby-desc">Ujung-ujungnya ga ada yang baca :(</span>
+            </div>
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Membaca</span>
+              <span class="hobby-desc">Suka bukunya, ga suka harganya :/</span>
+            </div>
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Berlari</span>
+              <span class="hobby-desc">Semoga bisa sampai marathon</span>
+            </div>
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Main Game</span>
+              <span class="hobby-desc">Kadang jago, kadang cupu :v</span>
+            </div>
+            <div class="hobby-card">
+              <span class="hobby-icon"></span>
+              <span class="hobby-name">Musik</span>
+              <span class="hobby-desc">Lagunya enak = masuk playlist</span>
+            </div>
+          </div>
+          <a href="untold-story.html" class="untold-card">
+            <div class="untold-card-text">
+              <span class="untold-card-title">My Article</span>
+            </div>
+            <span class="dl-icon">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="songs" class="section section-alt">
+    <div class="container">
+      <div class="section-label reveal">Music</div>
+      <h2 class="section-title centered reveal">My Top Picks<br/><em>Tiga Lagu Favorit</em></h2>
+       <p class="section-sub reveal">ㅤ</p>
+
+
+      <div class="vp-layout reveal" id="vinyl-player">
+
+        <div class="vp-left">
+          <div class="vp-deck" id="vp-deck">
+            <i class="vp-screw s1"></i><i class="vp-screw s2"></i><i class="vp-screw s3"></i><i class="vp-screw s4"></i>
+
+            <div class="vp-platter">
+              <div class="vp-record" id="vp-record">
+                <div class="vp-label"><img id="vp-label-img" alt=""/></div>
+              </div>
+              <div class="vp-sheen"></div>
+              <i class="vp-spindle"></i>
+            </div>
+
+            <i class="vp-led" id="vp-led"></i>
+            <i class="vp-rest"></i>
+            <div class="vp-pivot"></div>
+            <div class="vp-arm" id="vp-arm">
+              <i class="vp-arm-cw"></i>
+              <i class="vp-arm-tube"></i>
+              <i class="vp-arm-head"></i>
+              <i class="vp-arm-stylus"></i>
+            </div>
+
+            <div class="vp-knob-well" id="vp-knob" role="slider" tabindex="0" aria-label="Volume"
+                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="70">
+              <div class="vp-knob"><i class="vp-knob-mark"></i></div>
+            </div>
+          </div>
+
+          <div class="vp-card">
+            <div class="vp-head">
+              <div class="vp-meta">
+                <h4 class="vp-title" id="vp-title">—</h4>
+                <p class="vp-artist" id="vp-artist"></p>
+              </div>
+              <div class="vp-controls">
+                <button type="button" class="vp-btn" id="vp-prev" aria-label="Lagu sebelumnya">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.2h1.6v9.6H3.5zM13 3.6v8.8a.5.5 0 0 1-.8.4L6.2 8.4a.5.5 0 0 1 0-.8l6-4.4a.5.5 0 0 1 .8.4z"/></svg>
+                </button>
+                <button type="button" class="vp-btn vp-btn--main" id="vp-play" aria-label="Putar">
+                  <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 2.9v10.2a.5.5 0 0 0 .77.42l8-5.1a.5.5 0 0 0 0-.84l-8-5.1a.5.5 0 0 0-.77.42z"/></svg>
+                  <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h2.6v10H4zM9.4 3H12v10H9.4z"/></svg>
+                </button>
+                <button type="button" class="vp-btn" id="vp-next" aria-label="Lagu berikutnya">
+                  <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.9 3.2h1.6v9.6h-1.6zM3 3.6v8.8a.5.5 0 0 0 .8.4l6-4.4a.5.5 0 0 0 0-.8l-6-4.4a.5.5 0 0 0-.8.4z"/></svg>
+                </button>
+              </div>
+            </div>
+            <p class="vp-note" id="vp-note" role="status" hidden></p>
+            <div class="vp-progress">
+              <span class="vp-time" id="vp-cur">0:00</span>
+              <input type="range" id="vp-seek" min="0" max="100" step="0.1" value="0" aria-label="Posisi lagu" disabled/>
+              <span class="vp-time" id="vp-dur">0:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="vp-right">
+          <div class="vs-cabinet" id="vs-cabinet" role="group" aria-label="Koleksi album"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="section">
+    <div class="container">
+      <div class="section-label reveal">Works</div>
+      <h2 class="section-title centered reveal">Karya <em>Digital</em></h2>
+      <p class="section-sub reveal">Koleksi karya yang telah saya buat</p>
+
+      <div class="works-list">
+
+        <div class="work-card reveal">
+          <div class="work-card-left">
+            <div class="work-num">01</div>
+            <div class="work-info">
+              <h4 class="work-title">Sebab Senyummu Pernah Singgah</h4>
+              <p class="work-desc">Sebuah manuskrip puisi tentang rasa yang tak kunjung sirna</p>
+              <div class="work-tags">
+                <span class="work-tag">Poetry</span>
+                <span class="work-tag">E-Book</span>
+              </div>
+            </div>
+          </div>
+          <a href="Sebab Senyummu Pernah Singgah.pdf" target="_self" class="btn btn-download">Lihat
+          </a>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-card-left">
+            <div class="work-num">02</div>
+            <div class="work-info">
+              <h4 class="work-title">Surprise...</h4>
+              <p class="work-desc">Sebuah web ulang tahun interaktif berbasis HTML, CSS, dan JavaScript</p>
+              <div class="work-tags">
+                <span class="work-tag">Web</span>
+                <span class="work-tag">Interactive</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://rayyanabdillahanugrah.github.io/WebUltah/" target="_self" class="btn btn-download">Kunjungi
+          </a>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-card-left">
+            <div class="work-num">03</div>
+            <div class="work-info">
+              <h4 class="work-title">Solaris</h4>
+              <p class="work-desc">Sebuah projek web kelompok informatika tentang edukasi tata surya</p>
+              <div class="work-tags">
+                <span class="work-tag">Web</span>
+                <span class="work-tag">Education</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://rayyanabdillahanugrah.github.io/Solaris/" target="_self" class="btn btn-download">Kunjungi
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="frames" class="section sf-section">
+    <div class="container">
+      <div class="section-label reveal">Frames</div>
+      <h2 class="section-title centered reveal">World Through<br/><em>My Lens</em></h2>
+      <p class="section-sub reveal">Semuanya diambil pakai handphone lho!</p>
+    </div>
+ 
+    <div class="sf-gallery reveal" id="sf-gallery" role="region" aria-label="Galeri Selected Frames">
+      <div class="sf-track" id="sf-track"></div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="section section-alt">
+    <div class="container">
+      <div class="section-label reveal">Portfolio</div>
+      <h2 class="section-title centered reveal">Prestasi &<br/><em>Momen Terbaik</em></h2>
+      <p class="section-sub reveal"></p>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-item reveal" data-index="0">
+          <img class="portfolio-img" src="porto1.jpg" alt="Prestasi 1" onerror="this.src='https://picsum.photos/seed/porto1/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">Juara 3 MHQ SMP</div>
+        </div>
+
+        <div class="portfolio-item reveal" data-index="1">
+          <img class="portfolio-img" src="porto2.jpg" alt="Prestasi 2" onerror="this.src='https://picsum.photos/seed/porto2/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">15 Besar Lomba CCI</div>
+        </div>
+
+        <div class="portfolio-item reveal" data-index="2">
+          <img class="portfolio-img" src="porto3-optimal.jpg" alt="Prestasi 3" onerror="this.src='https://picsum.photos/seed/porto3/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">Juara 2 MHQ SMP</div>
+        </div>
+
+        <div class="portfolio-item reveal" data-index="3">
+          <img class="portfolio-img" src="porto4.jpg" alt="Prestasi 4" onerror="this.src='https://picsum.photos/seed/porto4/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">Ketua OSIS</div>
+        </div>
+
+        <div class="portfolio-item reveal" data-index="4">
+          <img class="portfolio-img" src="porto5.jpg" alt="Prestasi 5" onerror="this.src='https://picsum.photos/seed/porto5/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">Juara 2 MHQ SMP</div>
+        </div>
+
+        <div class="portfolio-item reveal" data-index="5">
+          <img class="portfolio-img" src="porto6.jpg" alt="Prestasi 6" onerror="this.src='https://picsum.photos/seed/porto6/600/450'"/>
+          <div class="portfolio-overlay">
+            <span class="portfolio-label">Lihat</span>
+          </div>
+          <div class="portfolio-caption">Juara Harapan 2 FLS3NFG 2026</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label reveal">Contact</div>
+      <h2 class="section-title centered reveal">Lets <em>Connect</em></h2>
+      <p class="section-sub reveal">Saya terbuka sebagai teman obrolan</p>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3 class="contact-info-title">Informasi Kontak</h3>
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <span class="contact-info-icon">📧</span>
+              <div>
+                <span class="contact-info-label">Email</span>
+                <a href="mailto:rayyanabdillahanugrah@gmail.com" class="contact-info-val">rayyanabdillahanugrah@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-icon">📍</span>
+              <div>
+                <span class="contact-info-label">Lokasi</span>
+                <span class="contact-info-val">Jakarta, Indonesia</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-icon">💼</span>
+              <div>
+                <span class="contact-info-label">Tersedia sebagai</span>
+                <span class="contact-info-val">Teman obrolan</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.instagram.com/riuhaksara_?igsh=aWQxcWpvOGZvb25y" class="social-btn" title="Instagram">IG</a>
+            <a href="https://www.strava.com/athletes/138564877" class="social-btn" title="Strava"><i class="bi bi-strava"></i></a>
+            <a href="https://substack.com/@rynalmmtz?utm_source=share&utm_medium=android&r=8p72hi" class="social-btn" title="Substack"><i class="bi bi-substack"></i></a>
+            <a href="https://github.com/rayyanabdillahanugrah" class="social-btn" title="GitHub">GH</a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal">
+          <form id="contact-form" action="https://formspree.io/f/xojyavnz" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="fname">Nama Lengkap</label>
+              <input class="form-input" type="text" id="fname" name="nama" placeholder="Masukkan nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="femail">Email</label>
+              <input class="form-input" type="email" id="femail" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fmsg">Pesan</label>
+              <textarea class="form-input form-textarea" id="fmsg" name="pesan" placeholder="Halo! Saya ingin berdiskusi tentang..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Kirim</button>
+            <div class="form-success" id="form-success">✓ Pesan berhasil dikirim!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">ReyStudio<span class="dot">.</span></span>
+      <span class="footer-copy">ReyStudio — Together, we make a difference</span>
+      <a href="#hero" class="footer-top">Kembali</a>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modal" onclick="closeModal()">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <img class="modal-img" id="modal-img" src="" alt=""/>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-title"></h3>
+        <p class="modal-desc" id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sf-modal" id="sf-modal" role="dialog" aria-modal="true" aria-labelledby="sf-modal-title" aria-hidden="true">
+    <div class="sf-modal__box">
+      <button type="button" class="sf-modal__close" id="sf-modal-close" aria-label="Tutup">✕</button>
+      <div class="sf-modal__media">
+        <img id="sf-modal-img" src="" alt=""/>
+      </div>
+      <div class="sf-modal__body">
+        <span class="sf-modal__eyebrow" id="sf-modal-index"></span>
+        <h3 class="sf-modal__title" id="sf-modal-title"></h3>
+        <dl class="sf-modal__meta">
+          <div id="sf-modal-date-row">
+            <dt>Date</dt>
+            <dd id="sf-modal-date"></dd>
+          </div>
+          <div id="sf-modal-loc-row">
+            <dt>Location</dt>
+            <dd id="sf-modal-loc"></dd>
+          </div>
+        </dl>
+        <p class="sf-modal__desc" id="sf-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
