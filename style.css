@@ -50,7 +50,11 @@ body {
   color: var(--text);
   font-size: 16px;
   line-height: 1.7;
-  overflow-x: hidden;
+  overflow-x: hidden; /* fallback */
+}
+
+@supports (overflow: clip) {
+  body { overflow-x: clip; }
 }
 
 img { display: block; max-width: 100%; }
@@ -1767,3 +1771,38 @@ body.star-dragging * { cursor: grabbing !important; }
   .vp-arm { transition-duration: .01s; }
   .vs-album, .vp-btn, .vp-led { transition: none; }
 }
+
+/* Mobile scroll stability and rendering optimizations */
+@media (max-width: 700px) {
+  /* Keep the hero height stable while the browser address bar expands/collapses. */
+  #hero {
+    min-height: 100vh; /* fallback */
+    min-height: 100svh;
+  }
+
+  /* Avoid an expensive live blur behind a fixed navbar during touch scrolling. */
+  #navbar.scrolled {
+    background: rgba(255, 255, 255, .97);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  [data-theme="dark"] #navbar.scrolled {
+    background: rgba(17, 17, 16, .97);
+  }
+
+  /* Keep decorative card sway static on small touch devices. */
+  .sf-frame {
+    animation: none;
+  }
+
+  .hero-bg-shape {
+    filter: blur(48px);
+  }
+}
+
+/* Do not animate off-screen gallery cards unnecessarily. */
+.sf-gallery.is-offscreen .sf-frame {
+  animation-play-state: paused;
+}
+

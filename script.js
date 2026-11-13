@@ -55,9 +55,11 @@ window.addEventListener("scroll", () => {
 });
 
 const scrollTopBtn = document.getElementById("scroll-top");
-window.addEventListener("scroll", () => {
-  scrollTopBtn.classList.toggle("visible", window.scrollY > 400);
-});
+if (scrollTopBtn) {
+  window.addEventListener("scroll", () => {
+    scrollTopBtn.classList.toggle("visible", window.scrollY > 400);
+  });
+}
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
@@ -971,10 +973,11 @@ const VINYL_ALBUMS = [
   },
   {
     id: 6,
-    title "Dewi",
+    title: "Dewi",
     artist: "Alexa",
     cover: "dewi.jpg",
     audio: "Alexa_-_Dewi_(mp3.pm).mp3"
+  }
 ];
 
 (function () {
